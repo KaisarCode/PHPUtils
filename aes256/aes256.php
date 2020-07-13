@@ -12,7 +12,7 @@ function aes256Encrypt($str, $pwd){
     $out = base64_encode("$iv:$slt:$pwc");
     } catch (Exception $e) {}
     return $out;
-};
+}
 function aes256Decrypt($str, $pwd){
     $out = false;
     try {
@@ -28,5 +28,5 @@ function aes256Decrypt($str, $pwd){
     $out = $pwc;
     } catch (Exception $e) {}
     return $out;
-};
+}
 ?>
