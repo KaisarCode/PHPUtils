@@ -47,4 +47,15 @@ function set200() {
 function noRobots() {
     @header('X-Robots-Tag: noindex, nofollow');
 }
+
+function redirect($url = null, $is301 = false) {
+    if(!$url) $url = getURL();
+    if($is301) @header('HTTP/1.1 301 Moved Permanently');
+    @header("Location: $url");
+    echo "<script>location.href = $url</script>";
+}
+
+function refresh() {
+    return redirect();
+}
 ?>
